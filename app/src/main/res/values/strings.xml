@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TravelRequestForm</string>
+    <string name="orderTravel">הזמן נסיעה</string>
+    <string name="openScreenPhoto">openScreenPhoto</string>
+</resources>
