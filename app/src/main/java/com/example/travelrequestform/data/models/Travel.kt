@@ -9,39 +9,38 @@ import androidx.room.TypeConverters
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.HashMap
 
 
 @Entity
 class Travel {
-    @PrimaryKey
-    private var travelId : String? = null
-    fun setTravelId(travelId : String){
-        this.travelId = travelId
-    }
 
-    private val clientName: String? = null
-    private val clientPhone: String? = null
-    private val clientEmail: String? = null
+    @PrimaryKey
+    var travelId: String? = null
+    var clientName: String? = null
+    var clientPhone: String? = null
+    var clientEmail: String? = null
 
     @TypeConverters(UserLocationConverter::class)
-    private val travelLocations: List<UserLocation>? = null
+    var travelLocations: MutableList<UserLocation> = arrayListOf()
 
     @TypeConverters(RequestType::class)
-    private val requestType: RequestType? = null
+    var requestType: RequestType? = null
 
     @TypeConverters(DateConverter::class)
-    private val travelDate: Date? = null
+    var travelDate: Date? = null
 
     @TypeConverters(DateConverter::class)
-    private val arrivalDate: Date? = null
+    var arrivalDate: Date? = null
 
     @TypeConverters(CompanyConverter::class)
-    private val company: HashMap<String, Boolean>? = null
+    var company: HashMap<String, Boolean> = HashMap()
 
     class DateConverter {
 
         @SuppressLint("SimpleDateFormat")
         private var format = SimpleDateFormat("yyyy-MM-dd")
+
         @TypeConverter
         @Throws(ParseException::class)
         fun fromTimestamp(date: String?): Date? {
@@ -112,11 +111,34 @@ class Travel {
 
         @TypeConverter
         fun asString(warehouseUserLocation: UserLocation?): String {
-            return if (warehouseUserLocation == null) "" else warehouseUserLocation.longitude
-                .toString() + " " + warehouseUserLocation.latitude
+            return if (warehouseUserLocation == null) "" else warehouseUserLocation.getLon()
+                .toString() + " " + warehouseUserLocation.getLat()
         }
     }
 
-    class UserLocation(var latitude : Double, var longitude : Double)
+    class UserLocation() {
+        private var lat: Double? = null
+        private var lon: Double? = null
+        fun getLat(): Double? {
+            return lat
+        }
+
+        fun getLon(): Double? {
+            return lon
+        }
+
+        constructor(lat: Double, lon: Double) : this() {
+            this.lat = lat
+            this.lon = lon
+        }
+
+        fun convertFromLocation(location: Location?): UserLocation? {
+            return if (location == null) null else UserLocation(
+                location.latitude,
+                location.longitude
+            )
+        }
+    }
+
 
 }

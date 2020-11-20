@@ -2,4 +2,10 @@
     <string name="app_name">TravelRequestForm</string>
     <string name="orderTravel">הזמן נסיעה</string>
     <string name="openScreenPhoto">openScreenPhoto</string>
+    <string name="welcome">ברוכים הבאים</string>
+    <string name="createTravel">בחר והזמן את פרטי נסיעתך</string>
+    <string name="travelInYourWay">נסיעה בדרך שלך !</string>
+    <string name="continueWelcome">ל אפליקציית הזמנת הנסיעות</string>
+    <string name="ETPersonName">שם מלא</string>
+    <string name="et_phone">פלאפון</string>
 </resources>
