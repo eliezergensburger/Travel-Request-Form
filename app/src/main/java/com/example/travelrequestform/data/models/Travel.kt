@@ -21,6 +21,11 @@ class Travel {
     var clientPhone: String? = null
     var clientEmail: String? = null
 
+    var numOfTravelers : Int? = null
+
+    @TypeConverters(UserLocationConverter::class)
+    var address: UserLocation? = null
+
     @TypeConverters(UserLocationConverter::class)
     var travelLocations: MutableList<UserLocation> = arrayListOf()
 

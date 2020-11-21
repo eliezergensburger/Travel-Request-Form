@@ -8,4 +8,6 @@
     <string name="continueWelcome">ל אפליקציית הזמנת הנסיעות</string>
     <string name="ETPersonName">שם מלא</string>
     <string name="et_phone">פלאפון</string>
+    <string name="enterTravelDetales">הכנס את פרטי הנסיעה</string>
+    <string name="mailAdress">כתובת מייל</string>
 </resources>
