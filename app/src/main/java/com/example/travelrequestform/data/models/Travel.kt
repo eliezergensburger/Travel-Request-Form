@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
+import com.google.android.libraries.places.api.model.Place
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -132,15 +133,15 @@ class Travel {
             return lon
         }
 
-        constructor(lat: Double, lon: Double) : this() {
+        constructor(lat: Double?, lon: Double?) : this() {
             this.lat = lat
             this.lon = lon
         }
 
-        fun convertFromLocation(location: Location?): UserLocation? {
-            return if (location == null) null else UserLocation(
-                location.latitude,
-                location.longitude
+        fun convertFromPlace(place: Place): UserLocation? {
+            return UserLocation(
+                place.latLng?.latitude,
+                place.latLng?.longitude
             )
         }
     }
