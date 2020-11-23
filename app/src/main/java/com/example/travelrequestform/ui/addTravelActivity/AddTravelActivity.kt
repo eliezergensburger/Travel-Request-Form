@@ -25,7 +25,7 @@ import java.util.*
 const val ADDRESS_CODE = 1
 const val LOCATION_CODE = 2
 
-class AddTravelActivity : AppCompatActivity() {
+class AddTravelActivity : AppCompatActivity() , View.OnClickListener{
 
     private lateinit var travel: Travel
     private lateinit var travelViewModel: TravelViewModel
@@ -62,7 +62,6 @@ class AddTravelActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
         })
-
 
         /*travel.arrivalDate = Date(2020, 12, 4)
         travel.clientEmail = "yehudajka@gmail.com"
@@ -142,10 +141,10 @@ class AddTravelActivity : AppCompatActivity() {
 
 
     private fun setOnClickListeners() {
-        etAddress.setOnClickListener { view -> onClickPlace(view) }
-        etDestination.setOnClickListener { view -> onClickPlace(view) }
-        etTravelDate.setOnClickListener { view -> onClickDate(view) }
-        etReturnDate.setOnClickListener { view -> onClickDate(view) }
+        etAddress.setOnClickListener(this)
+        etDestination.setOnClickListener(this)
+        etTravelDate.setOnClickListener(this)
+        etReturnDate.setOnClickListener(this)
     }
 
     private fun initializeSpinner() {
@@ -188,6 +187,15 @@ class AddTravelActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            etAddress -> onClickPlace(v)
+            etDestination -> onClickPlace(v)
+            etTravelDate -> onClickDate(v)
+            etReturnDate -> onClickDate(v)
+        }
     }
 }
 
