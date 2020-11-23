@@ -15,4 +15,5 @@
     <string name="numberOfTravelers">מספר נוסעים :</string>
     <string name="travelDate">תאריך יציאה</string>
     <string name="returnDate">תאריך חזרה</string>
+    <string name="send">שלח</string>
 </resources>

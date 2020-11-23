@@ -140,7 +140,7 @@
                 android:id="@+id/et_travelDate"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_margin="15dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic__date"
                 android:drawableLeft="@drawable/ic__date"
@@ -152,13 +152,15 @@
                 android:paddingEnd="10dp"
                 android:textSize="18sp"
                 android:layout_marginRight="6dp"
-                android:layout_marginEnd="6dp" />
+                android:layout_marginEnd="6dp"
+                android:focusable="false"/>
 
             <EditText
                 android:id="@+id/et_returnDate"
+                android:focusable="false"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_margin="15dp"
                 android:background="@drawable/custom_input"
                 android:drawableStart="@drawable/ic__date"
                 android:drawableLeft="@drawable/ic__date"
@@ -180,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="שלח"
+            android:text="@string/send"
             android:shadowColor="@color/darker_gray"
             app:cornerRadius="10dp"/>
 
