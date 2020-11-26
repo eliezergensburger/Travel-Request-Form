@@ -2,7 +2,6 @@ package com.example.travelrequestform.ui.addTravelActivity
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.location.Location
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -110,9 +109,9 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         etPhone = findViewById(R.id.et_phone)
         etMail = findViewById(R.id.et_mail)
         etAddress = findViewById(R.id.et_address)
-        etAddress.isFocusable = false
+        //etAddress.isFocusable = false
         etDestination = findViewById(R.id.et_destination)
-        etDestination.isFocusable = false
+        //etDestination.isFocusable = false
         numOfTravelers = findViewById(R.id.num_of_travelers)
         etTravelDate = findViewById(R.id.et_travelDate)
         //etTravelDate.inputType = InputType.TYPE_NULL
