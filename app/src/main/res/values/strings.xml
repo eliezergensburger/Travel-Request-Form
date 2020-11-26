@@ -16,4 +16,9 @@
     <string name="travelDate">תאריך יציאה</string>
     <string name="returnDate">תאריך חזרה</string>
     <string name="send">שלח</string>
+    <string name="invalid_name">שדה חובה</string>
+    <string name="invalid_phone">אנא הכנס מספר חוקי</string>
+    <string name="invalid_email">אנא הכנס כתובת מייל חוקית</string>
+    <string name="invalid_address">אנא בחר כתובת יציאה וחזרה</string>
+    <string name="invalid_destination">אנא בחר כתובת יעד</string>
 </resources>
