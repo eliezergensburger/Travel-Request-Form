@@ -82,10 +82,11 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/address"
-            android:inputType="textPostalAddress"
+            android:inputType="none"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:focusable="false"/>
 
         <EditText
             android:id="@+id/et_destination"
@@ -98,10 +99,11 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/destinationAddresses"
-            android:inputType="textPostalAddress"
+            android:inputType="none"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:focusable="false"/>
 
 
         <LinearLayout
@@ -172,7 +174,7 @@
                 android:paddingEnd="10dp"
                 android:textSize="18sp"
                 android:layout_marginLeft="6dp"
-                android:layout_marginStart="6dp" />
+                android:layout_marginStart="6dp"/>
 
         </LinearLayout>
 
