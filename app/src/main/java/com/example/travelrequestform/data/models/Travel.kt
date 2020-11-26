@@ -22,7 +22,7 @@ class Travel {
     var clientPhone: String? = null
     var clientEmail: String? = null
 
-    var numOfTravelers : Int? = null
+    var numOfTravelers: Int? = null
 
     @TypeConverters(UserLocationConverter::class)
     var address: UserLocation? = null
@@ -138,13 +138,14 @@ class Travel {
             this.lon = lon
         }
 
-        fun convertFromPlace(place: Place): UserLocation? {
-            return UserLocation(
-                place.latLng?.latitude,
-                place.latLng?.longitude
-            )
+        constructor(place: Place) : this() {
+            this.lat = place.latLng?.latitude
+            this.lon = place.latLng?.longitude
         }
+
+        /*fun convertFromPlace(place: Place) {
+            this.lat = place.latLng?.latitude
+            this.lon = place.latLng?.longitude
+        }*/
     }
-
-
 }
