@@ -11,7 +11,9 @@
     <string name="enterTravelDetails">הכנס את פרטי הנסיעה</string>
     <string name="mailAddress">כתובת מייל</string>
     <string name="address">כתובת איסוף וחזרה</string>
-    <string name="destinationAddresses">כתובת יעד</string>
+    <string name="destinationAddresses1">כתובת יעד 1</string>
+    <string name="destinationAddresses2">כתובת יעד 2</string>
+    <string name="destinationAddresses3">כתובת יעד 3</string>
     <string name="numberOfTravelers">מספר נוסעים :</string>
     <string name="travelDate">תאריך יציאה</string>
     <string name="returnDate">תאריך חזרה</string>
@@ -22,4 +24,5 @@
     <string name="invalid_address">אנא בחר כתובת יציאה וחזרה</string>
     <string name="invalid_destination">אנא בחר כתובת יעד</string>
     <string name="orderComplete">הזמנתך נקלטה במערכת</string>
+
 </resources>

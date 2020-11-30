@@ -45,7 +45,7 @@ class Travel {
     class DateConverter {
 
         @SuppressLint("SimpleDateFormat")
-        private var format = SimpleDateFormat("yyyy-MM-dd")
+        private var format = SimpleDateFormat("dd-MM-yyyy")
 
         @TypeConverter
         @Throws(ParseException::class)
@@ -60,7 +60,7 @@ class Travel {
     }
 
     enum class RequestType(val code: Int) {
-        SENT(0), ACCEPTED(1), RUN(2), CLOSE(3);
+        SENT(0), ACCEPTED(1), RUN(2), CLOSE(3), PAYMENT(4);
 
         companion object {
             @TypeConverter

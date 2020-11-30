@@ -69,6 +69,7 @@
             android:inputType="textEmailAddress"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
+            android:onClick="o"
             android:textSize="18sp" />
 
         <EditText
@@ -89,7 +90,7 @@
             android:focusable="false"/>
 
         <EditText
-            android:id="@+id/et_destination"
+            android:id="@+id/et_destination1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="15dp"
@@ -98,13 +99,46 @@
             android:drawableLeft="@drawable/ic_location"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:hint="@string/destinationAddresses"
+            android:hint="@string/destinationAddresses1"
             android:inputType="none"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:textSize="18sp"
             android:focusable="false"/>
 
+        <EditText
+            android:id="@+id/et_destination2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="@string/destinationAddresses2"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="18sp"
+            android:focusable="false"/>
+
+        <EditText
+            android:id="@+id/et_destination3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="@string/destinationAddresses3"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="18sp"
+            android:focusable="false"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
