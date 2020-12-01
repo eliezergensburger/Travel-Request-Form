@@ -25,6 +25,7 @@ import com.google.android.material.button.MaterialButton
 import com.example.travelrequestform.data.models.Travel.UserLocation
 import java.text.DateFormat
 import java.util.*
+import java.util.Calendar.DATE
 
 
 const val ADDRESS_CODE = 1
@@ -43,13 +44,13 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etDestination1: EditText
     private lateinit var numOfTravelers: Spinner
     private lateinit var etTravelDate: EditText
-    private lateinit var etReturnDate: EditText
+    private lateinit var etArrivalDate: EditText
     private lateinit var btnSend: MaterialButton
     private lateinit var etDestination2: EditText
     private lateinit var etDestination3: EditText
 
     private lateinit var travelDate: Date
-    private lateinit var returnDate: Date
+    private lateinit var arrivalDate: Date
     private lateinit var addressPlace: Place
     private lateinit var destinationPlace1: Place
     private lateinit var destinationPlace2: Place
@@ -137,8 +138,8 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         numOfTravelers = findViewById(R.id.num_of_travelers)
         etTravelDate = findViewById(R.id.et_travelDate)
         etTravelDate.inputType = InputType.TYPE_NULL
-        etReturnDate = findViewById(R.id.et_returnDate)
-        etReturnDate.inputType = InputType.TYPE_NULL
+        etArrivalDate = findViewById(R.id.et_returnDate)
+        etArrivalDate.inputType = InputType.TYPE_NULL
         btnSend = findViewById(R.id.btn_send)
     }
 
@@ -169,7 +170,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         etDestination2.setOnClickListener(this)
         etDestination3.setOnClickListener(this)
         etTravelDate.setOnClickListener(this)
-        etReturnDate.setOnClickListener(this)
+        etArrivalDate.setOnClickListener(this)
         btnSend.setOnClickListener(this)
     }
 
@@ -195,7 +196,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etTravelDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        travelDate = Date(year, monthOfYear + 1, dayOfMonth)
+                        travelDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time///Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -204,11 +205,11 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 picker.datePicker.minDate = System.currentTimeMillis() - 1000
                 picker.show()
             }
-            etReturnDate -> {
+            etArrivalDate -> {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
-                        etReturnDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        returnDate = Date(year, monthOfYear + 1, dayOfMonth)
+                        etArrivalDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
+                        arrivalDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time//Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -228,7 +229,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             etDestination2 -> onClickPlace(v)
             etDestination3 -> onClickPlace(v)
             etTravelDate -> onClickDate(v)
-            etReturnDate -> onClickDate(v)
+            etArrivalDate -> onClickDate(v)
             btnSend -> clickSend()
         }
     }
@@ -259,14 +260,14 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         )
         awesomeValidation.addValidation(etTravelDate, SimpleCustomValidation {
 
-            if (etTravelDate.text.isNotEmpty() && etReturnDate.text.isNotEmpty()) {
+            if (etTravelDate.text.isNotEmpty() && etArrivalDate.text.isNotEmpty()) {
                 val travelDate = Date.parse(etTravelDate.text.toString())
-                val returnDate = Date.parse(etReturnDate.text.toString())
+                val returnDate = Date.parse(etArrivalDate.text.toString())
                 return@SimpleCustomValidation returnDate - travelDate > 0
             } else return@SimpleCustomValidation false
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
 
-        /* awesomeValidation.addValidation(etReturnDate, SimpleCustomValidation {
+        /* awesomeValidation.addValidation(etArrivalDate, SimpleCustomValidation {
 
          }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
  */
@@ -276,7 +277,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         awesomeValidation.clear()
         if (awesomeValidation.validate()) {
             val travel = Travel()
-            travel.arrivalDate = returnDate
+            travel.arrivalDate = arrivalDate
             travel.clientEmail = etMail.text.toString()
             travel.clientName = etName.text.toString()
             travel.clientPhone = etPhone.text.toString()
