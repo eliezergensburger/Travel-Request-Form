@@ -27,7 +27,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9600f1-3576-402d-87b4-c59f46381e91" name="Default Changelist" comment="Add destination2, destination3 (optional)">
+    <list default="true" id="8b9600f1-3576-402d-87b4-c59f46381e91" name="Default Changelist" comment="Date changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" afterDir="false" />
     </list>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606816986610</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Date changes">
+      <created>1606819787141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606819787141</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,7 +264,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="חחח" />
     <MESSAGE value="Add destination2, destination3 (optional)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add destination2, destination3 (optional)" />
+    <MESSAGE value="Date changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Date changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="286" y="158" key="#PSD" timestamp="1606253491598">
@@ -284,22 +292,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605998224484" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1606473071158">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1235" height="277" key="GridCell.Tab.0.bottom" timestamp="1606824224936">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1235" height="277" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606824224936" />
     <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1606473071158">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1235" height="277" key="GridCell.Tab.0.center" timestamp="1606824224936">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1235" height="277" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606824224936" />
     <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1606473071158">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1235" height="277" key="GridCell.Tab.0.left" timestamp="1606824224935">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1235" height="277" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606824224935" />
     <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1606473071158">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1235" height="277" key="GridCell.Tab.0.right" timestamp="1606824224936">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1235" height="277" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606824224936" />
     <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
+    <state width="1235" height="277" key="GridCell.Tab.1.bottom" timestamp="1606824224937">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1235" height="277" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606824224937" />
+    <state width="1235" height="277" key="GridCell.Tab.1.center" timestamp="1606824224937">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1235" height="277" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1606824224937" />
+    <state width="1235" height="277" key="GridCell.Tab.1.left" timestamp="1606824224937">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1235" height="277" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1606824224937" />
+    <state width="1235" height="277" key="GridCell.Tab.1.right" timestamp="1606824224937">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1235" height="277" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1606824224937" />
     <state x="147" y="65" key="MergeDialog" timestamp="1605998715070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -308,10 +336,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605998715084" />
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1606816988346">
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1606819793441">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606816988346" />
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606819793441" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605998688191" />
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1606252036896">
       <screen x="0" y="0" width="1536" height="824" />
@@ -321,5 +349,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606769178090" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="arrivalDate.toString()" language="kotlin" />
+        <watch expression="travelDate" language="kotlin" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -70,8 +70,10 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
         travelViewModel = ViewModelProviders.of(this).get(TravelViewModel::class.java)
         travelViewModel.getIsSuccess().observe(this, { isSuccess ->
-            if (isSuccess)
+            if (isSuccess){
                 setToast()
+                clearViews()
+            }
             else
                 Toast.makeText(
                     applicationContext, "Failed to register please try again",
@@ -196,7 +198,11 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etTravelDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        travelDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time///Date(year, monthOfYear, dayOfMonth)
+                        travelDate = GregorianCalendar(
+                            year + 1900,
+                            monthOfYear,
+                            dayOfMonth
+                        ).time///Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -209,7 +215,11 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etArrivalDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        arrivalDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time//Date(year, monthOfYear, dayOfMonth)
+                        arrivalDate = GregorianCalendar(
+                            year + 1900,
+                            monthOfYear,
+                            dayOfMonth
+                        ).time//Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -259,18 +269,12 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             }, "אנא בחר כתובת יעד"
         )
         awesomeValidation.addValidation(etTravelDate, SimpleCustomValidation {
-
-            if (etTravelDate.text.isNotEmpty() && etArrivalDate.text.isNotEmpty()) {
-                val travelDate = Date.parse(etTravelDate.text.toString())
-                val returnDate = Date.parse(etArrivalDate.text.toString())
-                return@SimpleCustomValidation returnDate - travelDate > 0
-            } else return@SimpleCustomValidation false
+            !travelDate.after(arrivalDate)
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
 
-        /* awesomeValidation.addValidation(etArrivalDate, SimpleCustomValidation {
-
-         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
- */
+        awesomeValidation.addValidation(etArrivalDate, SimpleCustomValidation {
+            !travelDate.after(arrivalDate)
+        }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
     }
 
     private fun clickSend() {
@@ -309,6 +313,20 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             view = layout
             show()
         }
+    }
+
+    private fun clearViews() {
+        etName.text.clear()
+        etMail.text.clear()
+        etPhone.text.clear()
+        etAddress.text.clear()
+        etTravelDate.text.clear()
+        etDestination1.text.clear()
+        etDestination2.text.clear()
+        etDestination3.text.clear()
+        etTravelDate.text.clear()
+        etArrivalDate.text.clear()
+        numOfTravelers.setSelection(0)
     }
 }
 
