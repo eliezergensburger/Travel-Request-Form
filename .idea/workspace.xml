@@ -28,13 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b9600f1-3576-402d-87b4-c59f46381e91" name="Default Changelist" comment="חחח">
-      <change beforePath="$PROJECT_DIR$/.idea/TravelRequestForm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TravelRequestForm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/data/models/Travel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/data/models/Travel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_travel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_travel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +59,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kYB0W104nclajsQwGvbIC3qbNW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -302,9 +301,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605998715084" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605998688191">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1606815984996">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606815984996" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605998688191" />
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1606252036896">
       <screen x="0" y="0" width="1536" height="824" />

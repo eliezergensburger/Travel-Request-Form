@@ -28,7 +28,9 @@ import java.util.*
 
 
 const val ADDRESS_CODE = 1
-const val LOCATION_CODE = 2
+const val LOCATION_CODE1 = 2
+const val LOCATION_CODE2 = 3
+const val LOCATION_CODE3 = 4
 
 class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -38,16 +40,20 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etPhone: EditText
     private lateinit var etMail: EditText
     private lateinit var etAddress: EditText
-    private lateinit var etDestination: EditText
+    private lateinit var etDestination1: EditText
     private lateinit var numOfTravelers: Spinner
     private lateinit var etTravelDate: EditText
     private lateinit var etReturnDate: EditText
     private lateinit var btnSend: MaterialButton
+    private lateinit var etDestination2: EditText
+    private lateinit var etDestination3: EditText
 
     private lateinit var travelDate: Date
     private lateinit var returnDate: Date
     private lateinit var addressPlace: Place
-    private lateinit var destinationPlace: Place
+    private lateinit var destinationPlace1: Place
+    private lateinit var destinationPlace2: Place
+    private lateinit var destinationPlace3: Place
     private lateinit var awesomeValidation: AwesomeValidation
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,11 +91,23 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                     // set address on EditText
                     etAddress.setText(addressPlace.address)
                 }
-                LOCATION_CODE -> {
+                LOCATION_CODE1 -> {
                     // initialize place
-                    destinationPlace = Autocomplete.getPlaceFromIntent(data as Intent)
+                    destinationPlace1 = Autocomplete.getPlaceFromIntent(data as Intent)
                     // set address on EditText
-                    etDestination.setText(destinationPlace.address)
+                    etDestination1.setText(destinationPlace1.address)
+                }
+                LOCATION_CODE2 -> {
+                    // initialize place
+                    destinationPlace2 = Autocomplete.getPlaceFromIntent(data as Intent)
+                    // set address on EditText
+                    etDestination2.setText(destinationPlace2.address)
+                }
+                LOCATION_CODE3 -> {
+                    // initialize place
+                    destinationPlace3 = Autocomplete.getPlaceFromIntent(data as Intent)
+                    // set address on EditText
+                    etDestination3.setText(destinationPlace3.address)
                 }
             }
         } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
@@ -103,14 +121,19 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+
     private fun initializeViews() {
         etName = findViewById(R.id.et_name)
         etPhone = findViewById(R.id.et_phone)
         etMail = findViewById(R.id.et_mail)
         etAddress = findViewById(R.id.et_address)
         etAddress.inputType = InputType.TYPE_NULL
-        etDestination = findViewById(R.id.et_destination)
-        etDestination.inputType = InputType.TYPE_NULL
+        etDestination1 = findViewById(R.id.et_destination1)
+        etDestination1.inputType = InputType.TYPE_NULL
+        etDestination2 = findViewById(R.id.et_destination2)
+        etDestination2.inputType = InputType.TYPE_NULL
+        etDestination3 = findViewById(R.id.et_destination3)
+        etDestination3.inputType = InputType.TYPE_NULL
         numOfTravelers = findViewById(R.id.num_of_travelers)
         etTravelDate = findViewById(R.id.et_travelDate)
         etTravelDate.inputType = InputType.TYPE_NULL
@@ -133,14 +156,18 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         //start activity result
         when (v) {
             etAddress -> startActivityForResult(intent, ADDRESS_CODE)
-            etDestination -> startActivityForResult(intent, LOCATION_CODE)
+            etDestination1 -> startActivityForResult(intent, LOCATION_CODE1)
+            etDestination2 -> startActivityForResult(intent, LOCATION_CODE2)
+            etDestination3 -> startActivityForResult(intent, LOCATION_CODE3)
         }
     }
 
 
     private fun setOnClickListeners() {
         etAddress.setOnClickListener(this)
-        etDestination.setOnClickListener(this)
+        etDestination1.setOnClickListener(this)
+        etDestination2.setOnClickListener(this)
+        etDestination3.setOnClickListener(this)
         etTravelDate.setOnClickListener(this)
         etReturnDate.setOnClickListener(this)
         btnSend.setOnClickListener(this)
@@ -197,7 +224,9 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             etAddress -> onClickPlace(v)
-            etDestination -> onClickPlace(v)
+            etDestination1 -> onClickPlace(v)
+            etDestination2 -> onClickPlace(v)
+            etDestination3 -> onClickPlace(v)
             etTravelDate -> onClickDate(v)
             etReturnDate -> onClickDate(v)
             btnSend -> clickSend()
@@ -211,8 +240,10 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             RegexTemplate.NOT_EMPTY, R.string.invalid_name
         )
         awesomeValidation.addValidation(
-            this, R.id.et_phone,
-            "^\\+?(972|0)(\\-)?0?(([23489]{1}\\d{7})|[5]{1}\\d{8})\$", R.string.invalid_phone
+            this,
+            R.id.et_phone,
+            "^\\+?(972|0)(\\-)?0?(([23489]{1}\\d{7})|[5]{1}\\d{8})\$",
+            R.string.invalid_phone
         )
         awesomeValidation.addValidation(
             this, R.id.et_mail,
@@ -222,7 +253,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             return@SimpleCustomValidation it.isNotEmpty()
         }, "אנא בחר כתובת יציאה וחזרה")
         awesomeValidation.addValidation(
-            etDestination, SimpleCustomValidation {
+            etDestination1, SimpleCustomValidation {
                 return@SimpleCustomValidation it.isNotEmpty()
             }, "אנא בחר כתובת יעד"
         )
@@ -235,20 +266,10 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             } else return@SimpleCustomValidation false
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
 
-        /*awesomeValidation.addValidation(etReturnDate, SimpleCustomValidation {
+        /* awesomeValidation.addValidation(etReturnDate, SimpleCustomValidation {
 
-            *//*if (etTravelDate.text.isNotEmpty() && etReturnDate.text.isNotEmpty()) {
-                val flag : Boolean = if (returnDate.year > travelDate.year) {
-                    true
-                } else if (returnDate.year == travelDate.year && returnDate.month > travelDate.month) {
-                    true
-                } else returnDate.month == travelDate.month && returnDate.day > travelDate.day
-                return@SimpleCustomValidation flag
-            }
-
-        } else return@SimpleCustomValidation false*//*
-        }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")*/
-
+         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
+ */
     }
 
     private fun clickSend() {
@@ -263,7 +284,12 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             travel.requestType = Travel.RequestType.SENT
             travel.travelDate = travelDate
             travel.numOfTravelers = numOfTravelers.selectedItem as Int
-            travel.travelLocations.add(UserLocation(destinationPlace))
+            travel.travelLocations.add(UserLocation(destinationPlace1))
+            if (etDestination2.text.isNotEmpty())
+                travel.travelLocations.add(UserLocation(destinationPlace2))
+            if (etDestination3.text.isNotEmpty())
+                travel.travelLocations.add(UserLocation(destinationPlace3))
+
             travel.address = UserLocation(addressPlace)
 
             travelViewModel.addTravel(travel)
