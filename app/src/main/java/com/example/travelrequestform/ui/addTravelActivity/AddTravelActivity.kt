@@ -1,5 +1,6 @@
 package com.example.travelrequestform.ui.addTravelActivity
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -24,6 +25,8 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.button.MaterialButton
 import com.example.travelrequestform.data.models.Travel.UserLocation
 import java.text.DateFormat
+import java.text.ParseException
+import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Calendar.DATE
 
@@ -196,7 +199,11 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etTravelDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        travelDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time///Date(year, monthOfYear, dayOfMonth)
+                        travelDate = GregorianCalendar(
+                            year + 1900,
+                            monthOfYear,
+                            dayOfMonth
+                        ).time///Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -209,7 +216,11 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 val picker = DatePickerDialog(
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etArrivalDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
-                        arrivalDate = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth).time//Date(year, monthOfYear, dayOfMonth)
+                        arrivalDate = GregorianCalendar(
+                            year + 1900,
+                            monthOfYear,
+                            dayOfMonth
+                        ).time//Date(year, monthOfYear, dayOfMonth)
                     },
                     year,
                     month,
@@ -258,14 +269,14 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 return@SimpleCustomValidation it.isNotEmpty()
             }, "אנא בחר כתובת יעד"
         )
-        awesomeValidation.addValidation(etTravelDate, SimpleCustomValidation {
+        /*awesomeValidation.addValidation(etTravelDate, SimpleCustomValidation {
 
             if (etTravelDate.text.isNotEmpty() && etArrivalDate.text.isNotEmpty()) {
                 val travelDate = Date.parse(etTravelDate.text.toString())
                 val returnDate = Date.parse(etArrivalDate.text.toString())
                 return@SimpleCustomValidation returnDate - travelDate > 0
             } else return@SimpleCustomValidation false
-        }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
+        }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה*/
 
         /* awesomeValidation.addValidation(etArrivalDate, SimpleCustomValidation {
 
@@ -275,7 +286,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun clickSend() {
         awesomeValidation.clear()
-        if (awesomeValidation.validate()) {
+        if (awesomeValidation.validate()&&checkDates(etTravelDate.toString(),etArrivalDate.toString())) {
             val travel = Travel()
             travel.arrivalDate = arrivalDate
             travel.clientEmail = etMail.text.toString()
@@ -309,6 +320,23 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             view = layout
             show()
         }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun checkDates(td: String, ad: String): Boolean {
+        var b: Boolean = false
+        if (td.isEmpty() || ad.isEmpty())
+            return b
+            val dfDate: SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy");
+            try {
+                if (dfDate.parse(td).before(dfDate.parse(ad)))
+                    b = true;//If start date is before end date
+                else b = dfDate.parse(td)
+                    .equals(dfDate.parse(ad)); //If start date is after the end date
+            } catch (e: ParseException) {
+                e.printStackTrace();
+            }
+            return b;
     }
 }
 
