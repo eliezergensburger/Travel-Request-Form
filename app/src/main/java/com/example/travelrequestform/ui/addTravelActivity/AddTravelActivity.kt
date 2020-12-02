@@ -70,11 +70,10 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
         travelViewModel = ViewModelProviders.of(this).get(TravelViewModel::class.java)
         travelViewModel.getIsSuccess().observe(this, { isSuccess ->
-            if (isSuccess){
+            if (isSuccess) {
                 setToast()
                 clearViews()
-            }
-            else
+            } else
                 Toast.makeText(
                     applicationContext, "Failed to register please try again",
                     Toast.LENGTH_LONG
@@ -202,7 +201,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                             year + 1900,
                             monthOfYear,
                             dayOfMonth
-                        ).time///Date(year, monthOfYear, dayOfMonth)
+                        ).time
                     },
                     year,
                     month,
@@ -219,7 +218,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                             year + 1900,
                             monthOfYear,
                             dayOfMonth
-                        ).time//Date(year, monthOfYear, dayOfMonth)
+                        ).time
                     },
                     year,
                     month,
@@ -269,11 +268,15 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             }, "אנא בחר כתובת יעד"
         )
         awesomeValidation.addValidation(etTravelDate, SimpleCustomValidation {
-            !travelDate.after(arrivalDate)
+            etArrivalDate.text.isNotEmpty() && etTravelDate.text.isNotEmpty() && !travelDate.after(
+                arrivalDate
+            )
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
 
         awesomeValidation.addValidation(etArrivalDate, SimpleCustomValidation {
-            !travelDate.after(arrivalDate)
+            etArrivalDate.text.isNotEmpty() && etTravelDate.text.isNotEmpty() && !travelDate.after(
+                arrivalDate
+            )
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
     }
 
