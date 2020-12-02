@@ -12,7 +12,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
 
-
+// Represent travel details
+// Can be stored in FireBase and/or in MySql through ROOM
 @Entity
 class Travel {
 
@@ -142,10 +143,5 @@ class Travel {
             this.lat = place.latLng?.latitude
             this.lon = place.latLng?.longitude
         }
-
-        /*fun convertFromPlace(place: Place) {
-            this.lat = place.latLng?.latitude
-            this.lon = place.latLng?.longitude
-        }*/
     }
 }

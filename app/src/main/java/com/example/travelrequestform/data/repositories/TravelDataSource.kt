@@ -9,27 +9,16 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-
+// Represent and contain one instance of the FireBase DB
 class TravelDataSource private constructor() {
 
+    // Indicates whether the travel was successfully inserted into the database
     val isSuccess = MutableLiveData<Boolean>()
-
-    /*interface ChangedListener {
-        fun change()
-    }
-
-    private var listener: ChangedListener? = null
-    fun setChangedListener(l: ChangedListener?) {
-        listener = l
-    }*/
-
-
-    val travelsList: List<Travel>? = null
-
 
     private val firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
     private val travelsRef: DatabaseReference = firebaseDatabase.getReference("ExistingTravels")
 
+    // Add travel obj to the DataBase
     fun addTravel(travel: Travel) {
         val id: String = travelsRef.push().key as String
         travel.travelId = id
@@ -41,21 +30,9 @@ class TravelDataSource private constructor() {
                 isSuccess.value = task.isSuccessful
             }
         })
-
-        /*travelsRef.child(id).setValue(travel)
-            .addOnSuccessListener(object : OnSuccessListener<Void?> {
-                override fun onSuccess(aVoid: Void?) {
-                    isSuccess.value = true
-                    isSuccess.value = null
-                }
-            }).addOnFailureListener(object : OnFailureListener {
-                override fun onFailure(e: Exception) {
-                    isSuccess.value = false
-                    isSuccess.value = null
-                }
-            })*/
     }
 
+    // Singleton
     companion object {
         var instance: TravelDataSource? = null
             get() {

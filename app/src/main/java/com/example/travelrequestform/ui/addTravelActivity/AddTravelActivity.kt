@@ -33,6 +33,7 @@ const val LOCATION_CODE1 = 2
 const val LOCATION_CODE2 = 3
 const val LOCATION_CODE3 = 4
 
+// The request travel form page
 class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var travelViewModel: TravelViewModel
@@ -96,19 +97,19 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 LOCATION_CODE1 -> {
                     // initialize place
                     destinationPlace1 = Autocomplete.getPlaceFromIntent(data as Intent)
-                    // set address on EditText
+                    // set destination on EditText
                     etDestination1.setText(destinationPlace1.address)
                 }
                 LOCATION_CODE2 -> {
                     // initialize place
                     destinationPlace2 = Autocomplete.getPlaceFromIntent(data as Intent)
-                    // set address on EditText
+                    // set destination on EditText
                     etDestination2.setText(destinationPlace2.address)
                 }
                 LOCATION_CODE3 -> {
                     // initialize place
                     destinationPlace3 = Autocomplete.getPlaceFromIntent(data as Intent)
-                    // set address on EditText
+                    // set destination on EditText
                     etDestination3.setText(destinationPlace3.address)
                 }
             }
@@ -123,7 +124,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-
+    // Initialize the view components to their references
     private fun initializeViews() {
         etName = findViewById(R.id.et_name)
         etPhone = findViewById(R.id.et_phone)
@@ -144,6 +145,8 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         btnSend = findViewById(R.id.btn_send)
     }
 
+    // Build intent and deliver him with the place details
+    // (The onClick functions for the address, location1, location2, location3 editTexts)
     private fun onClickPlace(v: View) {
 
         // initialize place filed list
@@ -164,7 +167,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-
+    // Initializes all viewable components with their listeners
     private fun setOnClickListeners() {
         etAddress.setOnClickListener(this)
         etDestination1.setOnClickListener(this)
@@ -175,6 +178,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         btnSend.setOnClickListener(this)
     }
 
+    // Initial the spinner values
     private fun initializeSpinner() {
         val items: MutableList<Int> = arrayListOf()
         for (i in 1..50) {
@@ -184,6 +188,8 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         numOfTravelers.adapter = adapter
     }
 
+    // Create date picker dialog
+    // (The onClick function for TravelDat, ArrivalDate editTexts)
     private fun onClickDate(view: View) {
 
         val cldr: Calendar = Calendar.getInstance()
@@ -231,6 +237,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    // The implement for the OnClickListener interface
     override fun onClick(v: View?) {
         when (v) {
             etAddress -> onClickPlace(v)
@@ -243,6 +250,8 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // Initializes all view components in appropriate tests
+    // note : uses in AwesomeValidation library
     private fun setValidation() {
         awesomeValidation = AwesomeValidation(ValidationStyle.BASIC)
         awesomeValidation.addValidation(
@@ -280,6 +289,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }, "התאריך חזרה חייב להיות מאוחר מתאריך היציאה")
     }
 
+    // Performs the tests and sends the travel details toward the FireBase
     private fun clickSend() {
         awesomeValidation.clear()
         if (awesomeValidation.validate()) {
@@ -304,6 +314,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // Create a custom toast message
     private fun setToast() {
         val layout = layoutInflater.inflate(
             R.layout.custom_toast,
@@ -318,6 +329,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // Clear the text from all the view components
     private fun clearViews() {
         etName.text.clear()
         etMail.text.clear()
