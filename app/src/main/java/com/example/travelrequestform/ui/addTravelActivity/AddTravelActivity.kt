@@ -68,7 +68,6 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         setOnClickListeners()
         initializeSpinner()
 
-
         travelViewModel = ViewModelProviders.of(this).get(TravelViewModel::class.java)
         travelViewModel.getIsSuccess().observe(this, { isSuccess ->
             if (isSuccess) {
@@ -76,7 +75,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                 clearViews()
             } else
                 Toast.makeText(
-                    applicationContext, "Failed to register please try again",
+                    applicationContext, "שליחת הנתונים נכשלה. נסה שוב במועד מאוחר יותר",
                     Toast.LENGTH_LONG
                 ).show()
         })
@@ -299,6 +298,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
             travel.clientName = etName.text.toString()
             travel.clientPhone = etPhone.text.toString()
             travel.company = HashMap()
+            travel.companyEmail = null
             travel.requestType = Travel.RequestType.SENT
             travel.travelDate = travelDate
             travel.numOfTravelers = numOfTravelers.selectedItem as Int
