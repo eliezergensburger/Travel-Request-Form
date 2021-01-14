@@ -27,17 +27,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9600f1-3576-402d-87b4-c59f46381e91" name="Default Changelist" comment="Finish App 1 !!&#10;Documentation">
+    <list default="true" id="8b9600f1-3576-402d-87b4-c59f46381e91" name="Default Changelist" comment="Added companyEmail to Travel.kt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/ui/addTravelActivity/AddTravelActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_travel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_travel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/data/repositories/TravelDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/travelrequestform/data/repositories/TravelDataSource.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[44689293]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -276,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606928583178</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added companyEmail to Travel.kt">
+      <created>1610222661794</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610222661794</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +304,8 @@
     <MESSAGE value="Finish App 1 !!" />
     <MESSAGE value="Finish App 1 !!&#10;&#10;validate date complete" />
     <MESSAGE value="Finish App 1 !!&#10;Documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish App 1 !!&#10;Documentation" />
+    <MESSAGE value="Added companyEmail to Travel.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added companyEmail to Travel.kt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="286" y="158" key="#PSD" timestamp="1606253491598">
@@ -313,6 +320,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="492" y="67" width="820" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606253715070" />
+    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1610619342632">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1610619342632" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606254320822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -330,42 +341,42 @@
     </state>
     <state x="142" y="77" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608032054431" />
     <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605998224484" />
-    <state width="1235" height="162" key="GridCell.Tab.0.bottom" timestamp="1606837937058">
+    <state width="1235" height="141" key="GridCell.Tab.0.bottom" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606837937058" />
+    <state width="1235" height="141" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
     <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1235" height="162" key="GridCell.Tab.0.center" timestamp="1606837937058">
+    <state width="1235" height="141" key="GridCell.Tab.0.center" timestamp="1610636975332">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606837937058" />
+    <state width="1235" height="141" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1610636975332" />
     <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1235" height="162" key="GridCell.Tab.0.left" timestamp="1606837937057">
+    <state width="1235" height="141" key="GridCell.Tab.0.left" timestamp="1610636975332">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606837937057" />
+    <state width="1235" height="141" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1610636975332" />
     <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1235" height="162" key="GridCell.Tab.0.right" timestamp="1606837937058">
+    <state width="1235" height="141" key="GridCell.Tab.0.right" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606837937058" />
+    <state width="1235" height="141" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
     <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606473071158" />
-    <state width="1235" height="277" key="GridCell.Tab.1.bottom" timestamp="1606837937042">
+    <state width="1235" height="141" key="GridCell.Tab.1.bottom" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="277" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606837937042" />
-    <state width="1235" height="277" key="GridCell.Tab.1.center" timestamp="1606837937041">
+    <state width="1235" height="141" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
+    <state width="1235" height="141" key="GridCell.Tab.1.center" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="277" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1606837937041" />
-    <state width="1235" height="277" key="GridCell.Tab.1.left" timestamp="1606837937041">
+    <state width="1235" height="141" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
+    <state width="1235" height="141" key="GridCell.Tab.1.left" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="277" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1606837937041" />
-    <state width="1235" height="277" key="GridCell.Tab.1.right" timestamp="1606837937042">
+    <state width="1235" height="141" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
+    <state width="1235" height="141" key="GridCell.Tab.1.right" timestamp="1610636975333">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1235" height="277" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1606837937042" />
+    <state width="1235" height="141" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1610636975333" />
     <state x="147" y="65" key="MergeDialog" timestamp="1605998715070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -375,10 +386,10 @@
     </state>
     <state x="339" y="144" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606826351960" />
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605998715084" />
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1606928587637">
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1610222680860">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606928587637" />
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1610222680860" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605998688191" />
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1606252036896">
       <screen x="0" y="0" width="1536" height="824" />
@@ -388,6 +399,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606769178090" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1610637520822">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1610637520822" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -6,8 +6,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 // Represent and contain one instance of the FireBase DB
 class TravelDataSource private constructor() {
@@ -17,6 +16,7 @@ class TravelDataSource private constructor() {
 
     private val firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
     private val travelsRef: DatabaseReference = firebaseDatabase.getReference("ExistingTravels")
+    private val isTravelAdded: DatabaseReference = firebaseDatabase.getReference("isTravelChange")
 
     // Add travel obj to the DataBase
     fun addTravel(travel: Travel) {
@@ -28,6 +28,10 @@ class TravelDataSource private constructor() {
 
             override fun onComplete(p0: Task<Void>) {
                 isSuccess.value = task.isSuccessful
+
+                if (task.isSuccessful) {
+                    isTravelAdded.setValue(true)
+                }
             }
         })
     }
