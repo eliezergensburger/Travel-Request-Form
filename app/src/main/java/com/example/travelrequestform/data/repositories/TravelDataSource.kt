@@ -16,7 +16,7 @@ class TravelDataSource private constructor() {
 
     private val firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
     private val travelsRef: DatabaseReference = firebaseDatabase.getReference("ExistingTravels")
-    private val isTravelAdded: DatabaseReference = firebaseDatabase.getReference("isTravelChange")
+    private val isTravelAdded: DatabaseReference = firebaseDatabase.getReference("isTravelAdded")
 
     // Add travel obj to the DataBase
     fun addTravel(travel: Travel) {

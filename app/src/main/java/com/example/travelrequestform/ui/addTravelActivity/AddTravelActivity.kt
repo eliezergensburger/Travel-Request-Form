@@ -1,5 +1,6 @@
 package com.example.travelrequestform.ui.addTravelActivity
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -24,6 +25,7 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.button.MaterialButton
 import com.example.travelrequestform.data.models.Travel.UserLocation
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Calendar.DATE
 
@@ -203,7 +205,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etTravelDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
                         travelDate = GregorianCalendar(
-                            year + 1900,
+                            year,
                             monthOfYear,
                             dayOfMonth
                         ).time
@@ -220,7 +222,7 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
                     this@AddTravelActivity, { view, year, monthOfYear, dayOfMonth ->
                         etArrivalDate.setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
                         arrivalDate = GregorianCalendar(
-                            year + 1900,
+                            year,
                             monthOfYear,
                             dayOfMonth
                         ).time
@@ -293,14 +295,17 @@ class AddTravelActivity : AppCompatActivity(), View.OnClickListener {
         awesomeValidation.clear()
         if (awesomeValidation.validate()) {
             val travel = Travel()
-            travel.arrivalDate = arrivalDate
+
+            @SuppressLint("SimpleDateFormat")
+            val format = SimpleDateFormat("dd/MM/yyyy")
+            travel.arrivalDate = format.format(arrivalDate)
             travel.clientEmail = etMail.text.toString()
             travel.clientName = etName.text.toString()
             travel.clientPhone = etPhone.text.toString()
             travel.company = HashMap()
             travel.companyEmail = null
             travel.requestType = Travel.RequestType.SENT
-            travel.travelDate = travelDate
+            travel.travelDate = format.format(travelDate)
             travel.numOfTravelers = numOfTravelers.selectedItem as Int
             travel.travelLocations.add(UserLocation(destinationPlace1))
             if (etDestination2.text.isNotEmpty())
